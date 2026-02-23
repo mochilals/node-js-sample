@@ -8,10 +8,10 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
-
 app.get('/error', (req, res) => {
   throw new Error("Simulated production crash");
 });
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
